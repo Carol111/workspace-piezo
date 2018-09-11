@@ -147,9 +147,10 @@ cpdefine("inline:com-chilipeppr-workspace-piezo", ["chilipeppr_ready"], function
             var that = this;
 
             chilipeppr.load(
-              "#com-chilipeppr-widget-serialport-instance",
-              "http://raw.githubusercontent.com/Carol111/widget-spjs/master/auto-generated-widget.html",
-              function() {
+                "#com-chilipeppr-widget-serialport-instance",
+                "http://raw.githubusercontent.com/chilipeppr/widget-spjs/master/auto-generated-widget.html",
+                // "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
+                function() {
                     console.log("mycallback got called after loading spjs module");
                     cprequire(["inline:com-chilipeppr-widget-serialport"], function(spjs) {
                         //console.log("inside require of " + fm.id);
@@ -166,9 +167,11 @@ cpdefine("inline:com-chilipeppr-workspace-piezo", ["chilipeppr_ready"], function
                         that.widgetSpjs - spjs;
                         
                         if (callback) callback(spjs);
+
                     });
                 }
             );
+            
         },
         /**
          * Load the Console widget via chilipeppr.load()
