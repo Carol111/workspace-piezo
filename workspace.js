@@ -145,8 +145,25 @@ cpdefine("inline:com-chilipeppr-workspace-piezo", ["chilipeppr_ready"], function
         loadSpjsWidget: function(callback) {
 
             var that = this;
-
+            
             chilipeppr.load(
+                "#com-chilipeppr-widget-serialport-instance",
+                "http://raw.githubusercontent.com/Carol111/widget-spjs/master/auto-generated-widget.html",
+                function() {
+                // Callback after widget loaded into #myDivWidgetSerialport
+                // Now use require.js to get reference to instantiated widget
+                cprequire(
+                    ["inline:com-chilipeppr-widget-serialport"], // the id you gave your widget
+                    function(myObjWidgetSerialport) {
+                    // Callback that is passed reference to the newly loaded widget
+                    console.log("Widget / Serial Port JSON Server just got loaded.", myObjWidgetSerialport);
+                    myObjWidgetSerialport.init();
+                  }
+                );
+              }
+            );
+
+            /*chilipeppr.load(
                 "#com-chilipeppr-widget-serialport-instance",
                 "http://raw.githubusercontent.com/chilipeppr/widget-spjs/master/auto-generated-widget.html",
                 // "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
@@ -170,7 +187,7 @@ cpdefine("inline:com-chilipeppr-workspace-piezo", ["chilipeppr_ready"], function
 
                     });
                 }
-            );
+            );*/
         },
         /**
          * Load the Console widget via chilipeppr.load()
