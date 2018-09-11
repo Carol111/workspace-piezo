@@ -145,7 +145,7 @@ cpdefine("inline:com-chilipeppr-workspace-piezo", ["chilipeppr_ready"], function
         loadSpjsWidget: function(callback) {
 
             var that = this;
-            
+            /*
             chilipeppr.load(
                 "#com-chilipeppr-widget-serialport-instance",
                 "http://raw.githubusercontent.com/Carol111/widget-spjs/master/auto-generated-widget.html",
@@ -161,9 +161,9 @@ cpdefine("inline:com-chilipeppr-workspace-piezo", ["chilipeppr_ready"], function
                   }
                 );
               }
-            );
+            );*/
 
-            /*chilipeppr.load(
+            chilipeppr.load(
                 "#com-chilipeppr-widget-serialport-instance",
                 "http://raw.githubusercontent.com/chilipeppr/widget-spjs/master/auto-generated-widget.html",
                 // "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
@@ -187,7 +187,7 @@ cpdefine("inline:com-chilipeppr-workspace-piezo", ["chilipeppr_ready"], function
 
                     });
                 }
-            );*/
+            );
         },
         /**
          * Load the Console widget via chilipeppr.load()
